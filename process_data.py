@@ -103,9 +103,10 @@ def access_tables():
    #    ).join(Ratings, Movies.Id == Ratings.Id).filter(Movies.PrimaryTitle == 'The Lion King').all()
    # print(movie_rowzzzzzz[0])
    movie_rows = session.query(
-      Movies.PrimaryTitle, 
       Movies.Id, 
-      Ratings.AverageRating
+      Movies.PrimaryTitle, 
+      Ratings.AverageRating,
+      Ratings.NumVotes
       ).join(Ratings, Movies.Id == Ratings.Id
       ).filter(Ratings.AverageRating == 10, Movies.StartYear.between('2015','2025'), Movies.TitleType == 'movie'
          # Movies.PrimaryTitle == 'The Lion King', Movies.StartYear.between('2015','2025'), Movies.TitleType == 'movie'
