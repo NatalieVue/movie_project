@@ -1,7 +1,8 @@
 import sqlite3
 import pandas as pd
 
-conn = sqlite3.connect('my_data.db')
+data = 'my_data.db'
+conn = sqlite3.connect(data)
 file = 'title.ratings.tsv'
 
 c = conn.cursor()
