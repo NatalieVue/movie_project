@@ -2,6 +2,7 @@ import sqlite3
 import pandas as pd
 
 conn = sqlite3.connect('my_data.db')
+file = 'title.ratings.tsv'
 
 c = conn.cursor()
 c.execute('''CREATE TABLE IF NOT EXISTS temp_ratings (tconst text, averageRating int, numVotes int)''')
@@ -9,7 +10,7 @@ c.execute('''CREATE TABLE IF NOT EXISTS temp_ratings (tconst text, averageRating
 
 
 # load the data into a Pandas DataFrame
-ratings = pd.read_csv('title.ratings.tsv', sep='\t')
+ratings = pd.read_csv(file, sep='\t')
 
 # write the data to a sqlite table
 ratings.to_sql('temp_ratings', conn, if_exists='append', index = False)
