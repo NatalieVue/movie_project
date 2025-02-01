@@ -1,0 +1,40 @@
+- Collect data from movie ratings (done)                    https://www.imdb.com
+- Find movie ratings for this year or last year             https://www.imdb.com
+    - Get movies from past 5-10 years using StartYear from Movies data
+    - Create graph out of movies within time frame
+ - Rotten tomatoes                                          https://www.rottentomatoes.com
+ - Awards
+- Maybe do top 10 movies only                               https://www.imdb.com
+- Create graph for ratings using matplotlib                 https://matplotlib.org
+ - Figure out what kind of graph to use                     https://matplotlib.org/stable/plot_types/index.html
+ - Line, bar
+- Or create a movie search
+ - When searching a movie, there are details about it       https://www.alexmolas.com/2024/02/05/a-search-engine-in-80-lines.html
+                                                            https://stackoverflow.com/questions/19640389/search-function-python
+
+
+
+
+
+
+
+
+SQLAlchemy Notes
+- using echo=True into the engine gives more details about what the code is doing
+- create a base class to define tables
+- Base.metadata.create_all(db) to create the table
+- id column should have primary_key
+- you can add methods to classes
+- session.query(User).all gets all users in database
+- one-to-one relationship = one class(ex: User) has exactly one other class (ex: UserAuth)
+    - there is a relationship that connects both classes
+    - ex:
+    class User(Base):
+    __tablename__ = "users"
+    id: Mapped[int] = mapped_column(primary_key=True)
+    auth: Mapped["UserAuth"] = relationship(
+        "UserAuth", uselist=False, back_populates="user"
+    )
+- for Mapped["UserAuth"] it's mapping a single object
+- back_populates syncs the relationships between different tables in example it's user and UserAuth
+- need 
