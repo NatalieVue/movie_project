@@ -12,6 +12,14 @@
  - When searching a movie, there are details about it       https://www.alexmolas.com/2024/02/05/a-search-engine-in-80-lines.html
                                                             https://stackoverflow.com/questions/19640389/search-function-python
 
+- Show movies with most NumVotes
+- Show top 3 movies each year
+- Separate movies into genres
+
+11:30
+
+
+
 
 
 
