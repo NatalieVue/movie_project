@@ -108,7 +108,7 @@ def access_tables():
       Ratings.AverageRating,
       Ratings.NumVotes
       ).join(Ratings, Movies.Id == Ratings.Id
-      ).filter(Ratings.NumVotes > 10, Movies.StartYear.between('2015','2025'), Movies.TitleType == 'movie'
+      ).filter(Ratings.NumVotes > 10, Movies.StartYear.between('2015','2025'), Movies.TitleType == 'movie', Ratings.AverageRating > 7
          # Movies.PrimaryTitle == 'The Lion King', Movies.StartYear.between('2015','2025'), Movies.TitleType == 'movie'
       ).order_by(desc(Ratings.NumVotes)
       ).limit(10
